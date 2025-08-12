@@ -1,7 +1,5 @@
 terraform {
-  backend "gcs" {
-    bucket  = "tf-state-bucket-test-infra-gcp"
-    project = "mi-proyecto-gcp"
-    location = "us-east1"
-  }
+  backend "gcs" {}
 }
+
+# Aquí va el resto de la configuración del módulo
