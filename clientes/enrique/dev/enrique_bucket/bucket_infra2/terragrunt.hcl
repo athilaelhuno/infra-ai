@@ -3,16 +3,16 @@ terraform {
 }
 
 inputs = {
-  project_id  = "rapido-poc-260923"
+  project_id  = "mi-proyecto-gcp"
   
 }
 
 remote_state {
   backend = "gcs"
   config = {
-    bucket = "tf-state-bucket-gcp"
-    project = "rapido-poc-260923"
-    location = "us-central1"
+    bucket = "tf-state-bucket-test-infra-gcp"
+    project = "mi-proyecto-gcp"
+    location = "us-east1"
     prefix = "enrique/dev/bucket/bucket_infra2"
   }
 }
