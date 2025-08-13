@@ -11,9 +11,28 @@ variable "aws_secret_access_key" {
 }
 
 variable "instance_type" {
-  type = string
+  description = "EC2 instance type"
+  type        = string
+  default     = "t3.micro"
 }
 
 variable "region" {
-  type = string
+  description = "AWS region"
+  type        = string
+}
+
+variable "ami" {
+  description = "AMI ID"
+  type        = string
+}
+
+variable "subnet_id" {
+  description = "Subnet ID"
+  type        = string
+}
+
+variable "name" {
+  description = "Instance name"
+  type        = string
+  default     = null
 }
