@@ -1,17 +1,27 @@
 
 
+remote_state {
+  backend = "gcs"
+  config = {
+    bucket = "tf-state-bucket-test-infra-terraform"
+    project = "rapido-poc-260923"
+    location = "us-central1"
+    prefix = "adriana/gcp/prod/gke/adriana-test"
+  }
+}
+
+generate "backend" {
+  path      = "backend.tf"
+  if_exists = "overwrite_terragrunt"
+  contents  = <<-EOT
+terraform {
+  backend "gcs" {}
+}
+EOT
+}
+
 terraform {
   source = "file:///Users/efermin/aaxis/AI/agents/infra/infraestructura/modules/gcp/gke"
-
-  extra_arguments "backend_config" {
-    commands = ["init"]
-    arguments = [
-      "-backend-config=bucket=tf-state-bucket-test-infra-terraform",
-      "-backend-config=project=rapido-poc-260923",
-      "-backend-config=location=us-central1",
-      "-backend-config=prefix=adriana/gcp/prod/gke/adriana-test"
-    ]
-  }
 }
 
 inputs = {
