@@ -10,40 +10,8 @@ remote_state {
   }
 }
 
-generate "backend" {
-  path      = "backend.tf"
-  if_exists = "overwrite"
-  contents  = <<-EOT
 terraform {
-  backend "gcs" {}
-}
-EOT
-}
-
-generate "main" {
-  path      = "main.tf"
-  if_exists = "overwrite"
-  contents  = <<-EOT
-module "gke" {
-  source = "./module"
-}
-
-EOT
-}
-
-generate "variables" {
-  path      = "variables.tf"
-  if_exists = "overwrite"
-  contents  = <<-EOT
-variable "name" {
-  type = string
-}
-
-EOT
-}
-
-terraform {
-  source = "file:///Users/efermin/aaxis/AI/agents/infra/infraestructura/modules/gcp/gke"
+  source = "/Users/efermin/aaxis/AI/agents/infra/infraestructura/modules/gcp/gke"
 }
 
 inputs = {
