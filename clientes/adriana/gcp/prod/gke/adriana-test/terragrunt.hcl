@@ -10,6 +10,16 @@ remote_state {
   }
 }
 
+generate "backend" {
+  path      = "backend.tf"
+  if_exists = "overwrite"
+  contents  = <<-EOT
+terraform {
+  backend "gcs" {}
+}
+EOT
+}
+
 terraform {
   source = "/Users/efermin/aaxis/AI/agents/infra/infraestructura/modules/gcp/gke"
 }
