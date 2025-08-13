@@ -8,3 +8,9 @@ variable "region" {
   type        = string
   default     = "us-central1"
 }
+
+variable "name" {
+  description = "Nombre del bucket (opcional). Si no se define, se usa un nombre por defecto."
+  type        = string
+  default     = null
+}

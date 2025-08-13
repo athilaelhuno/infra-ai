@@ -24,7 +24,7 @@ variable "region" {
 }
 
 resource "google_storage_bucket" "bucket" {
-  name          = "bucket-${var.project_id}"
+  name          = coalesce(var.name, "bucket-${var.project_id}")
   location      = var.region
   force_destroy = true
 }
