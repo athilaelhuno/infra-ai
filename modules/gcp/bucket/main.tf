@@ -1,5 +1,3 @@
-# Wrapper module that consumes the official registry module for GCS buckets
-
 module "bucket" {
   source  = "terraform-google-modules/cloud-storage/google"
   version = "~> 4.0"
