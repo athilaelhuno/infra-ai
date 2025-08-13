@@ -1,1 +1,8 @@
-# Implement this module using official Terraform Registry resources.
+module "bucket" {
+  source  = "terraform-google-modules/cloud-storage/google"
+  version = "~> 4.0"
+
+  project_id = var.project_id
+  location   = var.region
+  names      = [var.name]
+}
