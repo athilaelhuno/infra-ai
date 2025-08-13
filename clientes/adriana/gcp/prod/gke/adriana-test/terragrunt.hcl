@@ -27,6 +27,7 @@ terraform {
 inputs = {
   project_id  = "rapido-poc-260923"
   network = "rapido"
+  subnetwork = "subnet-01"
   region = "us-west1"
   name = "adriana-test"
 }
