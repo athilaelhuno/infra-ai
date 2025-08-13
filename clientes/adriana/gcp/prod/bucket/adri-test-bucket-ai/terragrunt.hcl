@@ -20,6 +20,43 @@ terraform {
 EOT
 }
 
+generate "main" {
+  path      = "main.tf"
+  if_exists = "overwrite_terragrunt"
+  contents  = <<-EOT
+module "bucket" {
+  source  = "terraform-google-modules/cloud-storage/google"
+  version = "~> 4.0"
+
+  project_id = var.project_id
+  location   = var.region
+  names      = [var.name]
+}
+
+EOT
+}
+
+generate "variables" {
+  path      = "variables.tf"
+  if_exists = "overwrite_terragrunt"
+  contents  = <<-EOT
+variable "project_id" {
+  type = string
+}
+
+variable "region" {
+  type = string
+  default = "us-central1"
+}
+
+variable "name" {
+  type = string
+  default = "adri-test-bucket-ai"
+}
+
+EOT
+}
+
 terraform {
   source = "terraform-google-modules/cloud-storage/google"
 }
