@@ -6,7 +6,7 @@ remote_state {
     bucket = "tf-state-bucket-test-infra-terraform"
     project = "rapido-poc-260923"
     location = "us-central1"
-    prefix = "adriana/gcp/prod/gke/adriana-test"
+    prefix = "jorge/gcp/gcp/vpc/jorge"
   }
 }
 
@@ -21,15 +21,10 @@ EOT
 }
 
 terraform {
-  source = "/Users/efermin/aaxis/AI/agents/infra/infraestructura/modules/gcp/gke"
+  source = "/Users/efermin/aaxis/AI/agents/infra/infraestructura/modules/gcp/vpc"
 }
 
 inputs = {
   project_id  = "rapido-poc-260923"
-  network = "rapido"
-  subnetwork = "subnet-01"
-  region = "us-west1"
-  ip_range_pods = "subnet-01-gke-pods"
-  ip_range_services = "subnet-01-gke-services"
-  name = "adriana-test"
+  name = "jorge"
 }
