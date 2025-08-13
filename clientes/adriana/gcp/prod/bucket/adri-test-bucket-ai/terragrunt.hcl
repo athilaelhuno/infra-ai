@@ -58,7 +58,7 @@ EOT
 }
 
 terraform {
-  source = "terraform-google-modules/cloud-storage/google"
+  source = "."
 }
 
 inputs = {
