@@ -30,5 +30,6 @@ inputs = {
   subnetwork = "subnet-01"
   region = "us-west1"
   ip_range_pods = "subnet-01-gke-pods"
+  ip_range_services = "subnet-01-gke-services"
   name = "adriana-test"
 }
