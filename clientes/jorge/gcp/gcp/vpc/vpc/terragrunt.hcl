@@ -26,5 +26,5 @@ terraform {
 
 inputs = {
   project_id  = "rapido-poc-260923"
-  
+  name = "vpc"
 }
