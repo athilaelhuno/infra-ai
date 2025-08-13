@@ -6,7 +6,12 @@ variable "name" {
   type = string
 }
 
-variable "location" {
+variable "regional" {
+  type = bool
+  default = true
+}
+
+variable "region" {
   type = string
   default = "us-central1"
 }
@@ -21,7 +26,12 @@ variable "subnetwork" {
   default = ""
 }
 
-variable "create_network" {
-  type = bool
-  default = true
+variable "ip_range_pods" {
+  type = string
+  default = "pods"
+}
+
+variable "ip_range_services" {
+  type = string
+  default = "services"
 }
