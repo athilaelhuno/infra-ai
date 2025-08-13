@@ -29,5 +29,6 @@ inputs = {
   network = "rapido"
   subnetwork = "subnet-01"
   region = "us-west1"
+  ip_range_pods = "10.10.10.0/24"
   name = "adriana-test"
 }
