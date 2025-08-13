@@ -6,7 +6,7 @@ remote_state {
     bucket = "tf-state-bucket-test-infra-terraform"
     project = "rapido-poc-260923"
     location = "us-central1"
-    prefix = "jorge/gcp/gcp/vpc/jorge"
+    prefix = "jorge/gcp/gcp/vpc/vpc"
   }
 }
 
@@ -26,5 +26,5 @@ terraform {
 
 inputs = {
   project_id  = "rapido-poc-260923"
-  name = "jorge"
+  
 }
