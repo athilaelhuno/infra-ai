@@ -12,7 +12,7 @@ remote_state {
 
 generate "backend" {
   path      = "backend.tf"
-  if_exists = "overwrite_terragrunt"
+  if_exists = "overwrite"
   contents  = <<-EOT
 terraform {
   backend "gcs" {}
@@ -22,7 +22,7 @@ EOT
 
 generate "main" {
   path      = "main.tf"
-  if_exists = "overwrite_terragrunt"
+  if_exists = "overwrite"
   contents  = <<-EOT
 module "gke" {
   source = "./module"
@@ -33,7 +33,7 @@ EOT
 
 generate "variables" {
   path      = "variables.tf"
-  if_exists = "overwrite_terragrunt"
+  if_exists = "overwrite"
   contents  = <<-EOT
 variable "name" {
   type = string
